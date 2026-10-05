@@ -1,63 +1,68 @@
-# Vitrine — Léo Mégret
+# Vitrine, Léo Mégret
 
-CV en une page web : un accueil minimal où chaque mot est cliquable, et cinq
-panneaux de détail illustrés.
+Un site d'une seule page, bilingue, écrit à la main. Aucun cadriciel, aucune
+dépendance, aucune police distante, aucun script de compilation.
+
+En ligne sur https://leo-meg.github.io
 
 ## Lancer en local
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8777
 ```
 
-Puis ouvrir <http://localhost:8000>.
-
-## Mettre en ligne
-
-Le site est entièrement statique (aucune dépendance, aucun script de build).
-Il suffit de déposer le dossier sur n'importe quel hébergeur :
-
-- **GitHub Pages** — pousser le dossier sur une branche `main`, puis
-  *Settings → Pages → Deploy from a branch*.
-- **Netlify / Cloudflare Pages** — glisser le dossier dans l'interface.
-- **Un hébergement classique** — copier le dossier par FTP.
+Puis ouvrir http://localhost:8777
 
 ## Structure
 
 ```
-index.html          tout le contenu (le texte se modifie ici)
-css/style.css       thème, mise en page, animations
-js/app.js           routage par hash, révélation au défilement
-img/                images (voir CREDITS.json pour les licences)
+index.html          tout le contenu, dans les deux langues
+css/style.css       mise en page, couleurs, thème sombre
+js/app.js           bascule de langue et apparition au défilement
+img/                photographies, licences dans CREDITS.json
 CV_Leo_Megret.pdf   le CV téléchargeable
 ```
 
-## Modifier le contenu
+## Le bilinguisme
 
-Tout le texte est dans `index.html`, en clair. Chaque section de détail est un
-`<section class="panneau" data-cle="...">` ; la clé sert d'ancre (`#parcours`,
-`#realisations`, `#savoirfaire`, `#approche`, `#contact`) et rend chaque
-panneau partageable par URL.
+Les deux langues vivent dans le même document. Chaque passage existe en deux
+versions, marquées `lang="fr"` et `lang="en"`, et le CSS masque celle qui n'est
+pas active.
 
-Pour qu'un élément apparaisse en fondu au défilement, lui ajouter l'attribut
-`data-reveal`. Rien d'autre à faire.
+```html
+<p lang="fr">Texte français.</p>
+<p lang="en">English text.</p>
+```
 
-## Choix techniques
+Le script met `data-lang` sur `<html>`, retient le choix dans le stockage local
+du navigateur, et part de la langue du navigateur au premier passage. Les deux
+versions restent dans le document, donc toutes les deux sont indexables.
 
-- **Aucune bibliothèque.** Trois fichiers, ~250 lignes de JavaScript et de CSS
-  d'animation. Rien à mettre à jour, rien qui casse dans deux ans.
-- **Pas d'`IntersectionObserver`.** L'API ne se déclenche pas dans certains
-  contextes (navigateur embarqué, onglet jamais peint), et un contenu invisible
-  parce qu'un observateur ne s'est pas réveillé est une panne silencieuse.
-  Une quinzaine de `getBoundingClientRect()` par frame de défilement coûtent
-  moins cher que ce risque.
-- **Le masquage dépend de la classe `js`** posée par `app.js` sur `<html>` :
-  si le script échoue ou est désactivé, tout le contenu reste visible et
-  indexable, au lieu d'une page blanche.
-- **Accessibilité** : navigation au clavier, `Échap` pour revenir, focus
-  visible, `prefers-reduced-motion` respecté, et une feuille d'impression.
+Pour ajouter du contenu, écrire les deux versions côte à côte. Si l'une manque,
+la bascule laissera un trou.
 
-## Crédits images
+## La mise en page
 
-Les captures d'écran (ophtao.fr, LearnAble) sont des travaux personnels.
-Les photographies de lieux viennent de Wikimedia Commons — licences et auteurs
-détaillés dans `img/CREDITS.json` et rappelés en bas du panneau « Me contacter ».
+Une édition annotée. Une colonne de texte, une marge de notes à droite au delà
+de 62 rem, et une colonne vertébrale à gauche avec un repère par entrée au delà
+de 68 rem. En dessous, tout retombe en une seule colonne et les notes passent
+au dessus de leur entrée.
+
+Chaque réalisation se termine par un bloc `decision`, qui porte le choix fait et
+ce qu'il a coûté. C'est la partie du site qui compte.
+
+## Sans JavaScript
+
+Le document reste entièrement lisible. L'apparition au défilement n'est posée
+que sous `html.js`, classe que le script ajoute lui-même, donc rien ne disparaît
+si le script ne tourne pas. Seule la bascule de langue devient inopérante, et
+les deux langues s'affichent alors l'une après l'autre.
+
+## Thème sombre
+
+Suit `prefers-color-scheme`. Aucun bouton, aucun réglage.
+
+## Images
+
+Les photographies de lieux viennent de Wikimedia Commons. Auteurs et licences
+dans `img/CREDITS.json`, rappelés en bas de page.

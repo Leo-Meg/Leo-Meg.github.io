@@ -1,499 +1,334 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Léo Mégret — Ingénieur IA</title>
-<meta name="description" content="Léo Mégret — ingénieur IA, traitement automatique des langues. Pipelines RAG, intégration d'APIs, extraction d'information clinique.">
+<title>Léo Mégret</title>
+<meta name="description" content="Léo Mégret, ingénieur en traitement automatique des langues. Récupération, évaluation, systèmes à base de modèles de langue. Ansan, Corée du Sud.">
 <meta name="author" content="Léo Mégret">
-<meta property="og:title" content="Léo Mégret — Ingénieur IA">
-<meta property="og:description" content="Je construis des systèmes où un modèle de langue est branché sur des données réelles.">
+<meta property="og:title" content="Léo Mégret">
+<meta property="og:description" content="Ingénieur en traitement automatique des langues. Je construis des systèmes où un modèle de langue travaille sur des données réelles.">
 <meta property="og:type" content="profile">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2312303F'/%3E%3Ctext x='50' y='68' font-size='52' font-family='Georgia,serif' text-anchor='middle' fill='%234EC3D4'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23141E26'/%3E%3Ctext x='50' y='67' font-size='46' font-family='Georgia,serif' text-anchor='middle' fill='%230F7D8C'%3ELM%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/style.css">
-<noscript><style>
-  /* Sans JavaScript : tout le contenu reste lisible et indexable. */
-  .panneaux { position: static; opacity: 1; visibility: visible; transform: none; }
-  .panneau[hidden] { display: block !important; }
-  .retour { display: none; }
-  [data-anim], [data-reveal] { opacity: 1 !important; transform: none !important; }
-  .visuel img { clip-path: none !important; }
-</style></noscript>
 </head>
 <body>
 
-<!-- ============================================================
-     ACCUEIL — le CV minimal : cinq mots, tout est cliquable
-     ============================================================ -->
-<main id="accueil" class="accueil" aria-label="Accueil">
-  <div class="accueil-inner">
+<header class="bandeau">
+  <span class="sig">Léo Mégret</span>
+  <nav>
+    <a href="#parcours"><span lang="fr">Parcours</span><span lang="en">Path</span></a>
+    <a href="#realisations"><span lang="fr">Réalisations</span><span lang="en">Work</span></a>
+    <a href="#methode"><span lang="fr">Méthode</span><span lang="en">Method</span></a>
+    <a href="#contact"><span lang="fr">Contact</span><span lang="en">Contact</span></a>
+    <a href="CV_Leo_Megret.pdf">CV</a>
+    <button class="bascule" type="button"><b>FR</b> / EN</button>
+  </nav>
+</header>
 
-    <header class="ident">
-      <h1 class="nom" data-anim="1">Léo <em>Mégret</em></h1>
-      <p class="rôle" data-anim="2">
-        <span class="pastille"></span>Ingénieur&nbsp;IA <span class="sep">·</span> Traitement automatique des langues
-      </p>
-      <p class="phrase" data-anim="3">
-        Je construis des systèmes où un modèle de langue est branché sur des données réelles.
-      </p>
-    </header>
+<div class="feuille">
 
-    <nav class="menu" aria-label="Sections">
-      <a class="entree" href="#parcours"     data-anim="4"><span class="num">01</span><span class="mot">Parcours</span><span class="fleche" aria-hidden="true">→</span></a>
-      <a class="entree" href="#realisations" data-anim="5"><span class="num">02</span><span class="mot">Réalisations</span><span class="fleche" aria-hidden="true">→</span></a>
-      <a class="entree" href="#savoirfaire"  data-anim="6"><span class="num">03</span><span class="mot">Savoir-faire</span><span class="fleche" aria-hidden="true">→</span></a>
-      <a class="entree" href="#approche"     data-anim="7"><span class="num">04</span><span class="mot">Ma façon de travailler</span><span class="fleche" aria-hidden="true">→</span></a>
-      <a class="entree" href="#contact"      data-anim="8"><span class="num">05</span><span class="mot">Me contacter</span><span class="fleche" aria-hidden="true">→</span></a>
-    </nav>
-
-    <footer class="pied" data-anim="9">
-      <a href="CV_Leo_Megret.pdf" class="lien-discret">CV en PDF</a>
-      <a href="https://github.com/Leo-Meg" class="lien-discret" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:megret.leo@protonmail.com" class="lien-discret">megret.leo@protonmail.com</a>
-    </footer>
-
-  </div>
-</main>
-
-
-<!-- ============================================================
-     PANNEAUX DE DÉTAIL
-     ============================================================ -->
-<div id="panneaux" class="panneaux" aria-hidden="true">
-
-  <button class="retour" id="retour" aria-label="Revenir à l'accueil">
-    <span class="retour-fleche" aria-hidden="true">←</span><span class="retour-nom">Léo Mégret</span>
-  </button>
-
-  <!-- ---------------------------------------------- 01 PARCOURS -->
-  <section class="panneau" id="p-parcours" data-cle="parcours" hidden>
-    <div class="panneau-tete">
-      <span class="panneau-num">01</span>
-      <h2>Parcours</h2>
-      <p class="chapeau">De la linguistique au logiciel livré. Six étapes, une même
-        question : comment fait-on pour qu'une machine comprenne un texte, et qu'est-ce qu'on
-        en fait ensuite ?</p>
-    </div>
-
-    <ol class="frise">
-
-      <li class="etape" data-reveal>
-        <div class="etape-date"><span>Avr. – Août 2026</span></div>
-        <div class="etape-corps">
-          <h3>AI&nbsp;Engineer &amp; responsable de projet</h3>
-          <p class="lieu">SELARL Ophtao — cabinet d'ophtalmologie, Houilles</p>
-          <p>Deux stagiaires à encadrer, nous trois formant toute l'équipe informatique du
-             cabinet, et un logiciel métier qui date d'une autre époque. J'y ai conçu et
-             construit un <strong>assistant RAG servi en API REST</strong>, avec FastAPI,
-             Pydantic, Docker, un microservice d'<em>embedding</em>, un service de génération
-             et une indexation hors-ligne. Il a été testé et validé par les médecins, sans
-             aller en service. J'ai aussi livré une <strong>passerelle d'intégration</strong>
-             qui transfère les données patient vers le Dossier Médical Partagé, ainsi que le
-             site du cabinet et son espace équipe, eux en service tous les jours.</p>
-          <p class="apprentissage">Ce que j'y ai appris, dans un environnement métier contraint,
-             la difficulté n'est jamais le modèle. Elle est à la frontière entre le modèle et
-             le système d'information.</p>
-          <div class="tags"><span>FastAPI</span><span>Docker</span><span>RAG</span><span>Intégration SI</span><span>Encadrement</span></div>
-          <figure class="visuel" data-reveal>
-            <img src="img/ophtao.jpg" alt="Page d'accueil du site ophtao.fr, mis en ligne pendant la mission" loading="lazy" width="1400" height="972">
-            <figcaption>Le site du cabinet, mis en ligne pendant la mission — <a href="https://ophtao.fr" target="_blank" rel="noopener">ophtao.fr</a></figcaption>
-          </figure>
-        </div>
-      </li>
-
-      <li class="etape" data-reveal>
-        <div class="etape-date"><span>Jan. – Juin 2025</span></div>
-        <div class="etape-corps">
-          <h3>LLM&nbsp;Engineer — stage de M2</h3>
-          <p class="lieu">Agence du Numérique en Santé · Inria · Inserm — PariSanté&nbsp;Campus</p>
-          <p>Traduire en français la <strong>SNOMED CT</strong>, une terminologie médicale de
-             quelque 350 000 concepts, en combinant grands modèles de langue et graphes de
-             connaissance. J'ai comparé empiriquement plusieurs <strong>stratégies de
-             récupération</strong> : similarités cosinus entre vecteurs de concepts,
-             exploitation directe de la structure du graphe, méthodes fondées sur les
-             propriétés structurelles.</p>
-          <p class="apprentissage">Ce que j'y ai appris : sans jeu de test ni métrique, une
-             intuition sur un prompt n'est qu'une intuition. C'est le réflexe que je garde
-             de la recherche.</p>
-          <div class="tags"><span>Multi-RAG</span><span>Graphes de connaissance</span><span>Évaluation</span><span>Aya 13B</span></div>
-          <figure class="visuel schema-graphe" data-reveal>
-            <!-- illustration dessinée à la main : un concept et son voisinage -->
-            <svg viewBox="0 0 640 300" role="img" aria-label="Schéma : un concept médical et son voisinage dans un graphe de connaissance">
-              <g class="aretes" stroke="currentColor" fill="none" stroke-width="1.2">
-                <path d="M320 150 L170 78"/><path d="M320 150 L150 178"/><path d="M320 150 L196 244"/>
-                <path d="M320 150 L482 84"/><path d="M320 150 L505 168"/><path d="M320 150 L438 246"/>
-                <path d="M170 78 L150 178"/><path d="M482 84 L505 168"/>
-              </g>
-              <g class="noeuds">
-                <circle cx="170" cy="78"  r="7"/><circle cx="150" cy="178" r="7"/>
-                <circle cx="196" cy="244" r="7"/><circle cx="482" cy="84"  r="7"/>
-                <circle cx="505" cy="168" r="7"/><circle cx="438" cy="246" r="7"/>
-                <circle class="pivot" cx="320" cy="150" r="13"/>
-              </g>
-              <g class="etiquettes" font-size="12">
-                <text x="320" y="122" text-anchor="middle" class="etiq-pivot">concept</text>
-                <text x="170" y="62"  text-anchor="middle">parent</text>
-                <text x="128" y="196" text-anchor="end">synonyme</text>
-                <text x="196" y="266" text-anchor="middle">enfant</text>
-                <text x="500" y="68"  text-anchor="start">attribut</text>
-                <text x="524" y="172" text-anchor="start">siège</text>
-                <text x="438" y="268" text-anchor="middle">morphologie</text>
-              </g>
-            </svg>
-            <figcaption>Le voisinage d'un concept dans le graphe : c'est ce contexte structurel
-              que l'on donne au modèle, plutôt que le seul libellé.</figcaption>
-          </figure>
-        </div>
-      </li>
-
-      <li class="etape" data-reveal>
-        <div class="etape-date"><span>2021 – 2025</span></div>
-        <div class="etape-corps">
-          <h3>Master de Linguistique informatique</h3>
-          <p class="lieu">Université Paris Cité — campus des Grands Moulins</p>
-          <p>Deux ans de <em>computational linguistics</em>, intégralement enseignés en anglais :
-             architecture Transformer, mécanisme d'attention, <em>fine-tuning</em>, méthodes
-             d'évaluation, sémantique formelle. Le socle qui fait que je ne considère pas un
-             modèle de langue comme une boîte noire.</p>
-          <figure class="visuel" data-reveal>
-            <img src="img/grands-moulins.jpg" alt="La cour intérieure du bâtiment des Grands Moulins, campus de l'Université Paris Cité" loading="lazy" width="1400" height="1050">
-            <figcaption>Les Grands Moulins, Paris&nbsp;13<sup>e</sup></figcaption>
-          </figure>
-        </div>
-      </li>
-
-      <li class="etape" data-reveal>
-        <div class="etape-date"><span>Juil. – Août 2024</span></div>
-        <div class="etape-corps">
-          <h3>Prompt&nbsp;Engineer — stage de M1</h3>
-          <p class="lieu">Hôpital Lariboisière — département d'anesthésie, Paris</p>
-          <p>Extraire des informations structurées de comptes rendus de consultation :
-             segmentation des textes cliniques, extraction de termes et de valeurs vers des
-             <em>DataFrames</em> exploitables, anonymisation des dossiers.</p>
-          <p class="apprentissage">Premier contact avec la donnée médicale réelle — celle qui
-             est mal orthographiée, abrégée, et jamais conforme au schéma qu'on avait prévu.</p>
-          <figure class="visuel" data-reveal>
-            <img src="img/lariboisiere.jpg" alt="Façade principale de l'hôpital Lariboisière à Paris" loading="lazy" width="1400" height="933">
-            <figcaption>Hôpital Lariboisière, Paris&nbsp;10<sup>e</sup></figcaption>
-          </figure>
-        </div>
-      </li>
-
-      <li class="etape" data-reveal>
-        <div class="etape-date"><span>Mai – Juin 2022</span></div>
-        <div class="etape-corps">
-          <h3>Data&nbsp;Scientist — stage de L3</h3>
-          <p class="lieu">Institut de Biologie Paris-Seine — Sorbonne Université, campus Jussieu</p>
-          <p>Automatisation en Python de la construction d'une matrice d'action pour l'analyse
-             de données génomiques : implémentation de définitions mathématiques, algorithmes
-             de partitionnement. Et la découverte de la pratique réelle de la recherche.</p>
-          <figure class="visuel" data-reveal>
-            <img src="img/jussieu.jpg" alt="Entrée du campus Jussieu, Sorbonne Université, Paris" loading="lazy" width="1400" height="1050">
-            <figcaption>Campus Jussieu, Paris&nbsp;5<sup>e</sup></figcaption>
-          </figure>
-        </div>
-      </li>
-
-      <li class="etape" data-reveal>
-        <div class="etape-date"><span>2018 – 2020</span></div>
-        <div class="etape-corps">
-          <h3>Licence de Philosophie — logique et culture scientifique</h3>
-          <p class="lieu">Université Paris 1 Panthéon-Sorbonne</p>
-          <p>Logique formelle, philosophie des sciences, théorie de la connaissance. C'est là
-             que j'ai pris l'habitude de démonter un argument avant de l'accepter — y compris
-             quand c'est le mien, et y compris quand il vient d'un modèle très sûr de lui.</p>
-          <figure class="visuel" data-reveal>
-            <img src="img/sorbonne.jpg" alt="La Sorbonne, Paris" loading="lazy" width="1400" height="1050">
-            <figcaption>La Sorbonne, Paris&nbsp;5<sup>e</sup></figcaption>
-          </figure>
-        </div>
-      </li>
-
-    </ol>
+  <section class="ouverture">
+    <h1>Léo <i>Mégret</i></h1>
+    <p lang="fr">Ingénieur en traitement automatique des langues. J'ai commencé par la philosophie,
+       puis la linguistique informatique, et je construis des systèmes où un modèle de langue
+       travaille sur des données réelles.</p>
+    <p lang="en">Natural language processing engineer. I started in philosophy, then computational
+       linguistics, and I build systems where a language model works on real data.</p>
+    <p class="sobre" lang="fr">Tout ce que j'ai livré jusqu'ici l'a été sur des données de santé,
+       dans des environnements où une erreur se paie. Je vis à Ansan, en Corée du Sud.</p>
+    <p class="sobre" lang="en">Everything I have delivered so far has been on medical data, in
+       settings where a mistake costs something. I live in Ansan, South Korea.</p>
   </section>
 
-  <!-- ------------------------------------------ 02 RÉALISATIONS -->
-  <section class="panneau" id="p-realisations" data-cle="realisations" hidden>
-    <div class="panneau-tete">
-      <span class="panneau-num">02</span>
-      <h2>Réalisations</h2>
-      <p class="chapeau">Des choses qui tournent, pas des maquettes. Chacune a demandé une
-        décision technique que je peux défendre.</p>
+  <!-- ====================================================== -->
+  <section class="section" id="parcours">
+    <div class="titre"><span class="para">§ 01</span>
+      <h2><span lang="fr">Parcours</span><span lang="en">Path</span></h2></div>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>2026</b><span lang="fr">Avril à août<br>Houilles, Yvelines</span><span lang="en">April to August<br>Houilles, France</span></p>
+      <h3><span lang="fr">Ingénieur IA et responsable de projet</span><span lang="en">AI engineer and project lead</span></h3>
+      <p class="ou"><span lang="fr">SELARL Ophtao, cabinet d'ophtalmologie</span><span lang="en">SELARL Ophtao, ophthalmology practice</span></p>
+      <p lang="fr">Deux stagiaires à encadrer, nous trois formant toute l'équipe informatique du
+         cabinet. J'ai livré le site et son espace équipe, en service tous les jours, cinq modules
+         d'automatisation déployés sur sept postes, et une passerelle vers le Dossier Médical
+         Partagé construite par-dessus un logiciel métier fermé.</p>
+      <p lang="en">Two interns to supervise, the three of us making up the practice's entire IT
+         team. I delivered the website and its staff area, live and used every day, five automation
+         modules deployed across seven workstations, and a bridge to France's national health record
+         built on top of a closed line-of-business application.</p>
+      <p lang="fr">J'y ai aussi conçu un assistant documentaire sur la base du cabinet. Les médecins
+         l'ont testé et ont jugé les réponses justes. Il n'est pas allé en service.</p>
+      <p lang="en">I also designed a document assistant over the practice's own base. The clinicians
+         tested it and judged the answers sound. It did not go into service.</p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>2025</b><span lang="fr">Janvier à juin<br>PariSanté Campus</span><span lang="en">January to June<br>PariSanté Campus</span></p>
+      <h3><span lang="fr">Ingénieur LLM, stage de fin d'études</span><span lang="en">LLM engineer, final internship</span></h3>
+      <p class="ou"><span lang="fr">Agence du Numérique en Santé, Inria, Inserm</span><span lang="en">French Digital Health Agency, Inria, Inserm</span></p>
+      <p lang="fr">Traduire la SNOMED CT en français et en espagnol, 350 000 concepts, sans perdre
+         une taxonomie construite depuis des décennies par des experts. J'ai comparé sept stratégies
+         de récupération d'exemples, avec des témoins tirés au hasard, sur des jeux de traductions
+         valides et invalides.</p>
+      <p lang="en">Translating SNOMED CT into French and Spanish, 350,000 concepts, without losing a
+         taxonomy experts had built over decades. I compared seven example-retrieval strategies,
+         with random controls, on reference sets of valid and invalid translations.</p>
+      <p lang="fr">La stratégie fondée sur le graphe garantit une proximité de domaine parfaite et
+         perd quand même. J'ai gardé ce résultat plutôt que mon hypothèse.</p>
+      <p lang="en">The strategy built on the knowledge graph guarantees perfect domain proximity and
+         still loses. I kept that result rather than my hypothesis.</p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>2024</b><span lang="fr">Juillet à août<br>AP-HP, Paris</span><span lang="en">July to August<br>AP-HP, Paris</span></p>
+      <h3><span lang="fr">Prompt engineer, stage</span><span lang="en">Prompt engineer, internship</span></h3>
+      <p class="ou"><span lang="fr">Hôpital Lariboisière, département d'anesthésie</span><span lang="en">Lariboisière Hospital, anaesthesiology department</span></p>
+      <p lang="fr">Extraire des informations structurées de comptes rendus de consultation.
+         Segmentation des textes cliniques, extraction de termes et de valeurs vers des tableaux,
+         anonymisation des dossiers avant tout traitement.</p>
+      <p lang="en">Extracting structured information from consultation notes. Segmentation of
+         clinical text, extraction of terms and values into tables, de-identification of the records
+         before any processing.</p>
+      <p lang="fr">Premier contact avec la donnée médicale réelle, mal orthographiée, abrégée,
+         jamais conforme au schéma prévu.</p>
+      <p lang="en">First contact with real medical data, misspelled, abbreviated, never matching the
+         schema anyone had planned for.</p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>2021 à 2025</b><span lang="fr">Université Paris Cité</span><span lang="en">Université Paris Cité</span></p>
+      <h3><span lang="fr">Master de linguistique informatique</span><span lang="en">MSc in computational linguistics</span></h3>
+      <p class="ou"><span lang="fr">Campus des Grands Moulins, Paris</span><span lang="en">Grands Moulins campus, Paris</span></p>
+      <p lang="fr">Deux ans enseignés intégralement en anglais. Architecture Transformer, mécanisme
+         d'attention, méthodes d'évaluation, sémantique formelle, linguistique de corpus. Le socle
+         qui fait que je ne prends pas un modèle de langue pour une boîte noire.</p>
+      <p lang="en">Two years taught entirely in English. Transformer architecture, attention,
+         evaluation methodology, formal semantics, corpus linguistics. The grounding that keeps me
+         from treating a language model as a black box.</p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>2022</b><span lang="fr">Mai à juin<br>Sorbonne Université</span><span lang="en">May to June<br>Sorbonne University</span></p>
+      <h3><span lang="fr">Data scientist, stage</span><span lang="en">Data scientist, internship</span></h3>
+      <p class="ou"><span lang="fr">Institut de Biologie Paris-Seine</span><span lang="en">Paris-Seine Institute of Biology</span></p>
+      <p lang="fr">Automatisation en Python de la construction d'une matrice d'action pour l'analyse
+         de données génomiques, avec des algorithmes de partitionnement.</p>
+      <p lang="en">Automating in Python the construction of an action matrix for genomic analysis,
+         with clustering algorithms.</p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>2018 à 2020</b><span lang="fr">Paris 1 Panthéon-Sorbonne</span><span lang="en">Panthéon-Sorbonne</span></p>
+      <h3><span lang="fr">Licence de philosophie, logique et culture scientifique</span><span lang="en">BA in philosophy, logic and philosophy of science</span></h3>
+      <p class="ou"><span lang="fr">Première année à l'université Paris Nanterre</span><span lang="en">First year at Paris Nanterre</span></p>
+      <p lang="fr">Logique formelle, épistémologie, histoire des sciences, et de l'anthropologie
+         structurale en première année. C'est là que j'ai pris l'habitude de démonter un argument
+         avant de l'accepter, y compris le mien, y compris celui d'un modèle très sûr de lui.</p>
+      <p lang="en">Formal logic, epistemology, history of science, and structural anthropology in
+         the first year. That is where I got into the habit of taking an argument apart before
+         accepting it, including my own, including one made by a very confident model.</p>
+    </article>
+  </section>
+
+  <!-- ====================================================== -->
+  <section class="section" id="realisations">
+    <div class="titre"><span class="para">§ 02</span>
+      <h2><span lang="fr">Réalisations</span><span lang="en">Work</span></h2></div>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>Ophtao</b>FastAPI<br>Docker<br>DrBERT<br>Ollama</p>
+      <h3><span lang="fr">Assistant documentaire, servi en API</span><span lang="en">Document assistant, served over an API</span></h3>
+      <p lang="fr">Une chaîne d'indexation hors-ligne lit la base documentaire, la découpe en
+         passages et construit l'index. Un service d'embedding fait tourner DrBERT, entraîné sur du
+         français médical. Un service de génération, et une couche FastAPI qui orchestre les deux.
+         Le tout en conteneurs.</p>
+      <p lang="en">An offline indexing chain reads the document base, splits it into passages and
+         builds the index. An embedding service runs DrBERT, trained on French medical text. A
+         generation service, and a FastAPI layer orchestrating the two. All of it in containers.</p>
+      <p class="decision"><b><span lang="fr">La décision</span><span lang="en">The decision</span></b>
+        <span lang="fr">Tout héberger sur les machines du cabinet plutôt que d'appeler une API
+          distante. Les données sont médicales. J'ai supprimé le problème du transfert vers un tiers
+          au lieu de le contractualiser, et cela m'a fermé l'accès aux modèles les plus
+          performants.</span>
+        <span lang="en">Host everything on the practice's own machines rather than calling a remote
+          API. The data is medical. I removed the third-party transfer problem instead of
+          contracting around it, and it closed off the strongest models.</span></p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>Ophtao</b><span lang="fr">Intégration<br>Santé<br>Automatisation</span><span lang="en">Integration<br>Health<br>Automation</span></p>
+      <h3><span lang="fr">Passerelle vers le Dossier Médical Partagé</span><span lang="en">Bridge to the national health record</span></h3>
+      <p lang="fr">Le logiciel métier du cabinet n'était pas certifié et n'exposait aucune API. J'ai
+         installé un logiciel certifié en parallèle et automatisé son usage comme passerelle, avec
+         une étude d'appel du téléservice d'identité nationale de santé sur l'ensemble de la
+         patientèle.</p>
+      <p lang="en">The practice's line-of-business software was not certified and exposed no API. I
+         installed a certified application alongside it and automated its use as a bridge, with a
+         study of the national health identity service across the whole patient base.</p>
+      <p class="decision"><b><span lang="fr">La décision</span><span lang="en">The decision</span></b>
+        <span lang="fr">Ne pas toucher au système existant. Écrire directement dans sa base aurait
+          été plus rapide, mais le schéma n'était pas documenté et rien ne garantissait sa stabilité
+          à la mise à jour suivante.</span>
+        <span lang="en">Leave the existing system alone. Writing straight into its database would
+          have been faster, but the schema was undocumented and nothing guaranteed it would survive
+          the next update.</span></p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>job-hunt-kr</b>Python<br>SQLite<br>IMAP</p>
+      <h3><span lang="fr">Veille d'emploi, l'humain garde le bouton</span><span lang="en">Job watching, the human keeps the button</span></h3>
+      <p lang="fr">Un pipeline qui collecte des offres par IMAP, par flux RSS et par API publiques,
+         les structure, les filtre par des règles déterministes, puis les fait noter par un
+         modèle.</p>
+      <p lang="en">A pipeline that collects postings over IMAP, RSS feeds and public APIs,
+         structures them, filters them with deterministic rules, then has a model score them.</p>
+      <p class="decision"><b><span lang="fr">La décision</span><span lang="en">The decision</span></b>
+        <span lang="fr">Une cascade. Un modèle local trie le volume gratuitement, l'API distante ne
+          juge que les survivants. Et l'outil écrit un brouillon, puis s'arrête. L'envoi reste à
+          moi.</span>
+        <span lang="en">A cascade. A local model sorts the volume for free, the remote API only
+          judges what survives. And the tool writes a draft, then stops. Sending stays with
+          me.</span></p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b><span lang="fr">Portfolio</span><span lang="en">Portfolio</span></b>NumPy<br><span lang="fr">zéro dépendance</span><span lang="en">no dependencies</span></p>
+      <h3><span lang="fr">Six dépôts, les fondations reprises depuis zéro</span><span lang="en">Six repositories, the foundations rebuilt from scratch</span></h3>
+      <p lang="fr">Un Transformer en NumPy pur avec la rétropropagation écrite à la main, BPE et
+         WordPiece, la recherche lexicale de l'index inversé à BM25, la logique propositionnelle de
+         la syntaxe à la valeur de vérité, et LoRA.</p>
+      <p lang="en">A Transformer in pure NumPy with back-propagation written by hand, BPE and
+         WordPiece, lexical search from the inverted index to BM25, propositional logic from syntax
+         to truth value, and LoRA.</p>
+      <p class="decision"><b><span lang="fr">Pourquoi</span><span lang="en">Why</span></b>
+        <span lang="fr">Pendant deux ans j'ai écrit des appels à des bibliothèques sans savoir
+          expliquer leurs arguments. Je reprends depuis le début, en mesurant chaque étape et en
+          gardant les résultats qui me donnent tort.</span>
+        <span lang="en">For two years I wrote library calls without being able to explain their
+          arguments. I am starting again from the beginning, measuring each step and keeping the
+          results that prove me wrong.</span></p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b>LangAble</b>JavaScript<br>SRS<br><span lang="fr">hors-ligne</span><span lang="en">offline</span></p>
+      <h3><span lang="fr">Deux applications d'apprentissage</span><span lang="en">Two learning applications</span></h3>
+      <p lang="fr">Répétition espacée, moteur à huit paliers, progression conservée dans le
+         navigateur, graphiques en SVG, suite de tests qui découvre le contenu toute seule. LangAble
+         pour le coréen, LearnAble pour n'importe quel sujet.</p>
+      <p lang="en">Spaced repetition, an eight-level engine, progress kept in the browser, SVG
+         charts, a test suite that discovers the content on its own. LangAble for Korean, LearnAble
+         for any subject.</p>
+      <p class="decision"><b><span lang="fr">La décision</span><span lang="en">The decision</span></b>
+        <span lang="fr">Renverser la priorité. Le contenu est le produit, les questions ne sont que
+          le contrôle. Une erreur fait reculer de deux paliers et pas jusqu'à zéro, parce qu'on
+          n'oublie pas une notion comme on oublie un réflexe.</span>
+        <span lang="en">Reverse the priority. The content is the product, the questions are only the
+          check. A mistake drops you two levels rather than back to zero, because you do not forget
+          an idea the way you forget a reflex.</span></p>
+    </article>
+
+    <article class="entree" data-reveal>
+      <p class="note"><b><span lang="fr">Traduction</span><span lang="en">Translation</span></b>MCP<br>A2A<br>19 ch.</p>
+      <h3><span lang="fr">Agent Engineer, en français</span><span lang="en">Agent Engineer, in French</span></h3>
+      <p lang="fr">Traduction intégrale des dix-neuf chapitres d'une formation à l'ingénierie
+         d'agents. Function calling, design patterns agentiques, mémoire et contexte, RAG agentique,
+         évaluation, guardrails, protocoles MCP et A2A.</p>
+      <p lang="en">Full translation of a nineteen chapter course on agent engineering. Function
+         calling, agentic design patterns, memory and context, agentic RAG, evaluation, guardrails,
+         the MCP and A2A protocols.</p>
+      <p class="decision"><b><span lang="fr">Pourquoi</span><span lang="en">Why</span></b>
+        <span lang="fr">Traduire un sujet technique oblige à le comprendre jusqu'au dernier détail.
+          On ne peut pas contourner une phrase qu'on n'a pas comprise.</span>
+        <span lang="en">Translating a technical subject forces you to understand it down to the last
+          detail. You cannot skip a sentence you have not understood.</span></p>
+    </article>
+  </section>
+
+  <!-- ====================================================== -->
+  <section class="section" id="methode">
+    <div class="titre"><span class="para">§ 03</span>
+      <h2><span lang="fr">Méthode</span><span lang="en">Method</span></h2></div>
+
+    <div class="principe" data-reveal>
+      <h4><span lang="fr">Mesurer plutôt que supposer</span><span lang="en">Measure rather than assume</span></h4>
+      <p lang="fr">Sans jeu de test, une intuition sur un prompt reste une intuition. Je sépare la
+         récupération de la génération, parce qu'elles ne se mesurent pas de la même façon, et parce
+         que la première plafonne la seconde.</p>
+      <p lang="en">Without a test set, an intuition about a prompt stays an intuition. I separate
+         retrieval from generation, because they are not measured the same way, and because the
+         first caps the second.</p>
     </div>
 
-    <div class="grille-projets">
+    <div class="principe" data-reveal>
+      <h4><span lang="fr">Garder les résultats négatifs</span><span lang="en">Keep negative results</span></h4>
+      <p lang="fr">Quand une expérience montre l'inverse de ce que j'attendais, je change la
+         conclusion et pas l'expérience. Mes dépôts citent mes erreurs de rendus plutôt que de les
+         effacer, et c'est la partie dont j'ai le plus appris.</p>
+      <p lang="en">When an experiment shows the opposite of what I expected, I change the conclusion
+         and not the experiment. My repositories quote the mistakes in my coursework rather than
+         erasing them, and that is the part I learned the most from.</p>
+    </div>
 
-      <article class="projet grand" data-reveal>
-        <div class="projet-media">
-          <img src="img/ophtao.jpg" alt="Le site du cabinet Ophtao" loading="lazy" width="1400" height="972">
-        </div>
-        <div class="projet-texte">
-          <p class="projet-cat">Mission — SELARL Ophtao</p>
-          <h3>Assistant documentaire RAG, servi en API</h3>
-          <p>Un pipeline complet : indexation hors-ligne d'une base de connaissances
-             (découpage, vecteurs, index), puis un service <strong>FastAPI</strong> qui
-             vectorise la question, cherche les passages proches, construit le prompt et
-             appelle le modèle. Architecture en microservices — l'<em>embedding</em> et la
-             génération sont deux services distincts — configuration par variables
-             d'environnement, routes <code>/chat</code> et <code>/health</code>.</p>
-          <p class="decision"><span>La décision</span> Tout héberger en local plutôt que
-             d'appeler une API distante : les données sont médicales, elles ne sortent pas.</p>
-          <div class="tags"><span>FastAPI</span><span>Pydantic</span><span>Docker</span><span>Ollama</span><span>NumPy</span></div>
-        </div>
-      </article>
+    <div class="principe" data-reveal>
+      <h4><span lang="fr">Préférer la contrainte</span><span lang="en">Prefer the constraint</span></h4>
+      <p lang="fr">Hébergement local plutôt qu'API distante, aucune dépendance plutôt qu'un
+         cadriciel, le corpus dans le code plutôt qu'un téléchargement. À chaque fois l'option la
+         plus contrainte, avec la raison écrite à côté.</p>
+      <p lang="en">Local hosting rather than a remote API, no dependencies rather than a framework,
+         the corpus in the code rather than a download. Every time the more constrained option, with
+         the reason written next to it.</p>
+    </div>
 
-      <article class="projet grand" data-reveal>
-        <div class="projet-media">
-          <img src="img/learnable.jpg" alt="Une section de cours dans LearnAble" loading="lazy" width="1400" height="940">
-        </div>
-        <div class="projet-texte">
-          <p class="projet-cat">Projet personnel — 2025-2026</p>
-          <h3>LangAble &amp; LearnAble</h3>
-          <p>Deux applications d'apprentissage à répétition espacée, écrites sans cadriciel :
-             moteur de Leitner à huit paliers, progression persistée, graphiques SVG,
-             suite de tests qui découvre le contenu toute seule. LangAble pour le coréen,
-             <strong>LearnAble</strong> pour n'importe quel sujet — avec un parcours complet
-             de 14 cours sur les APIs et l'ingénierie GenAI.</p>
-          <p class="decision"><span>La décision</span> Renverser la priorité : dans LearnAble,
-             le contenu est le produit et les questions ne sont que le contrôle. Une erreur
-             fait reculer de deux paliers, pas jusqu'à zéro — on n'oublie pas une notion comme
-             on oublie un réflexe.</p>
-          <div class="tags"><span>JavaScript</span><span>SRS</span><span>Tests</span><span>Zéro dépendance</span></div>
-        </div>
-      </article>
+    <div class="principe" data-reveal>
+      <h4><span lang="fr">Descendre aux fondations</span><span lang="en">Go down to the foundations</span></h4>
+      <p lang="fr">Je ne fais pas confiance à ce que je ne peux pas démonter. C'est pourquoi je
+         réécris des choses qui existent déjà en bibliothèque, et pourquoi je sais expliquer
+         pourquoi on divise par la racine de d dans l'attention.</p>
+      <p lang="en">I do not trust what I cannot take apart. That is why I rewrite things that
+         already exist in libraries, and why I can explain why we divide by the square root of d in
+         attention.</p>
+    </div>
 
-      <article class="projet" data-reveal>
-        <div class="projet-texte">
-          <p class="projet-cat">Projet personnel — Python</p>
-          <h3>job-hunt-kr</h3>
-          <p>Un pipeline d'agents packagé — CLI, SQLite, <code>pytest</code>, jeux
-             d'évaluation — qui collecte des offres d'emploi par IMAP, flux RSS et APIs
-             publiques, les structure, les filtre par règles déterministes, puis les fait
-             noter par un modèle.</p>
-          <p class="decision"><span>La décision</span> Une <strong>cascade</strong> : un modèle
-             local trie gratuitement, l'API distante ne juge que les survivants. Sur un lot
-             réel, la majorité des offres est du bruit évident — payer un appel pour l'écarter
-             n'a pas de sens.</p>
-          <div class="tags"><span>Python 3.11</span><span>API Anthropic</span><span>Ollama</span><span>evals</span></div>
-        </div>
-      </article>
-
-      <article class="projet" data-reveal>
-        <div class="projet-texte">
-          <p class="projet-cat">Open source — traduction</p>
-          <h3>Agent Engineer, en français</h3>
-          <p>Traduction intégrale des 19 chapitres d'une formation à l'ingénierie d'agents :
-             <em>function calling</em>, design patterns agentiques, mémoire et contexte, RAG
-             agentique, systèmes multi-agents, évaluation, <em>guardrails</em>, mise en
-             production, protocoles <strong>MCP</strong> et A2A.</p>
-          <p class="decision"><span>Pourquoi</span> Traduire un sujet technique oblige à le
-             comprendre jusqu'au dernier détail — on ne peut pas contourner une phrase qu'on
-             n'a pas comprise.</p>
-          <div class="tags"><span>MCP</span><span>Agents</span><span>19 chapitres</span></div>
-        </div>
-      </article>
-
-      <article class="projet" data-reveal>
-        <div class="projet-texte">
-          <p class="projet-cat">Mission — SELARL Ophtao</p>
-          <h3>Passerelle vers le Dossier Médical Partagé</h3>
-          <p>Le logiciel métier du cabinet n'était pas certifié Ségur et n'exposait aucune API
-             moderne. J'ai installé un logiciel certifié en parallèle et automatisé son
-             utilisation comme <strong>passerelle</strong> entre les données patient
-             existantes et le DMP. Plus une étude d'appel du téléservice d'identité nationale
-             de santé sur l'ensemble de la patientèle, avec analyse statistique des échecs.</p>
-          <p class="decision"><span>La décision</span> Ne pas toucher au système existant.
-             Construire à côté, en lecture, avec une couche d'adaptation qui isole l'ancien
-             du nouveau.</p>
-          <div class="tags"><span>Intégration</span><span>Santé</span><span>Automatisation</span></div>
-        </div>
-      </article>
-
-      <article class="projet" data-reveal>
-        <div class="projet-texte">
-          <p class="projet-cat">Recherche — mémoire de master</p>
-          <h3>Traduire la SNOMED CT avec des LLM</h3>
-          <p>Comparaison empirique de stratégies de récupération pour la traduction française
-             d'une terminologie médicale de 350 000 concepts. Revue des métriques d'évaluation
-             de la traduction automatique, analyse de jeux de traductions valides et invalides,
-             reprise et analyse critique du <em>proof of concept</em> de SNOMED International.</p>
-          <div class="tags"><span>SNOMED CT</span><span>In-context learning</span><span>Similarité cosinus</span></div>
-        </div>
-      </article>
-
+    <div class="grille" data-reveal style="margin-top:1.8rem">
+      <div><h4><span lang="fr">Modèles de langue</span><span lang="en">Language models</span></h4>
+        <p>Prompt engineering, in-context learning, tool calling, LoRA, Transformer, tokenisation</p></div>
+      <div><h4><span lang="fr">Récupération</span><span lang="en">Retrieval</span></h4>
+        <p><span lang="fr">Découpage, embeddings, FAISS, TF-IDF, BM25, LSA, reclassement, graphes de connaissance</span><span lang="en">Chunking, embeddings, FAISS, TF-IDF, BM25, LSA, reranking, knowledge graphs</span></p></div>
+      <div><h4><span lang="fr">Évaluation</span><span lang="en">Evaluation</span></h4>
+        <p><span lang="fr">Jeux de test, rappel@k, MRR, MAP, comparaison contrôlée de stratégies</span><span lang="en">Test sets, recall@k, MRR, MAP, controlled comparison of strategies</span></p></div>
+      <div><h4><span lang="fr">Ingénierie</span><span lang="en">Engineering</span></h4>
+        <p>Python, FastAPI, Docker, REST, pytest, Git, SQLite, PHP, JavaScript</p></div>
+      <div><h4><span lang="fr">Méthodes formelles</span><span lang="en">Formal methods</span></h4>
+        <p><span lang="fr">Logique formelle, sémantique formelle, linguistique de corpus, ontologies</span><span lang="en">Formal logic, formal semantics, corpus linguistics, ontologies</span></p></div>
+      <div><h4><span lang="fr">Langues</span><span lang="en">Languages</span></h4>
+        <p><span lang="fr">Français natif, anglais professionnel, coréen débutant</span><span lang="en">French native, English professional, Korean beginner</span></p></div>
     </div>
   </section>
 
-  <!-- ------------------------------------------- 03 SAVOIR-FAIRE -->
-  <section class="panneau" id="p-savoirfaire" data-cle="savoirfaire" hidden>
-    <div class="panneau-tete">
-      <span class="panneau-num">03</span>
-      <h2>Savoir-faire</h2>
-      <p class="chapeau">Ce que j'ai réellement utilisé pour livrer quelque chose — pas une
-        liste de mots-clés.</p>
-    </div>
-
-    <div class="grille-compets">
-
-      <div class="bloc-comp" data-reveal>
-        <h3>Python &amp; développement</h3>
-        <ul>
-          <li>Python 3.11, programmation orientée objet</li>
-          <li>Packaging (<code>pyproject</code>, venv), CLI (Typer)</li>
-          <li>Tests <code>pytest</code>, qualité <code>ruff</code> / <code>mypy</code></li>
-          <li>Git, revue de code, documentation</li>
-        </ul>
-      </div>
-
-      <div class="bloc-comp" data-reveal>
-        <h3>APIs &amp; intégration</h3>
-        <ul>
-          <li>Conception et consommation d'APIs REST</li>
-          <li>FastAPI, Pydantic, <code>requests</code> / <code>httpx</code></li>
-          <li>JSON, JSON Schema, OpenAPI</li>
-          <li>Docker, docker-compose, microservices</li>
-        </ul>
-      </div>
-
-      <div class="bloc-comp" data-reveal>
-        <h3>GenAI &amp; LLM</h3>
-        <ul>
-          <li>API Anthropic, modèles locaux via Ollama</li>
-          <li>Prompt engineering, <em>in-context learning</em></li>
-          <li><em>Tool calling</em>, boucles agentiques, garde-fous</li>
-          <li>Jeux d'évaluation et critères de qualité</li>
-        </ul>
-      </div>
-
-      <div class="bloc-comp" data-reveal>
-        <h3>RAG &amp; connaissances</h3>
-        <ul>
-          <li><em>Chunking</em>, embeddings, index vectoriel</li>
-          <li>Similarité cosinus, recherche hybride</li>
-          <li>Graphes de connaissance (SNOMED CT)</li>
-          <li>Mesure du rappel, séparée de la génération</li>
-        </ul>
-      </div>
-
-      <div class="bloc-comp" data-reveal>
-        <h3>Machine learning &amp; NLP</h3>
-        <ul>
-          <li>PyTorch, HuggingFace, scikit-learn, spaCy</li>
-          <li>Pandas, NumPy</li>
-          <li>Transformer, attention, <em>fine-tuning</em></li>
-          <li>Métriques d'évaluation, analyse d'erreurs</li>
-        </ul>
-      </div>
-
-      <div class="bloc-comp" data-reveal>
-        <h3>Langues &amp; transmission</h3>
-        <ul>
-          <li>Français — langue maternelle</li>
-          <li>Anglais — B2, master enseigné en anglais</li>
-          <li>Coréen — en cours, en autodidacte</li>
-          <li>Encadrement de stagiaires, vulgarisation</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ---------------------------------------------- 04 APPROCHE -->
-  <section class="panneau" id="p-approche" data-cle="approche" hidden>
-    <div class="panneau-tete">
-      <span class="panneau-num">04</span>
-      <h2>Ma façon de travailler</h2>
-      <p class="chapeau">Quatre convictions, chacune payée par une erreur que j'ai faite.</p>
-    </div>
-
-    <div class="principes">
-
-      <div class="principe" data-reveal>
-        <span class="principe-num">i</span>
-        <h3>Le modèle n'est presque jamais le problème</h3>
-        <p>Quand un système d'IA déçoit, la cause est en amont neuf fois sur dix : les mauvais
-           passages ont été retrouvés, la donnée était mal extraite, l'outil était mal décrit.
-           Mon premier geste de diagnostic n'est jamais de retoucher le prompt — c'est
-           d'afficher ce que le système a réellement vu.</p>
-      </div>
-
-      <div class="principe" data-reveal>
-        <span class="principe-num">ii</span>
-        <h3>Sans mesure, on ne fait que bricoler</h3>
-        <p>Sur un système non déterministe, une modification qui améliore trois cas peut en
-           casser cinq sans que rien ne le signale. Trente à cinquante cas annotés à la main,
-           écrits avec la personne qui saura dire ce qu'est une bonne réponse, valent plus que
-           n'importe quelle intuition — et s'écrivent en une après-midi.</p>
-      </div>
-
-      <div class="principe" data-reveal>
-        <span class="principe-num">iii</span>
-        <h3>Commencer par le niveau le plus simple qui répond au besoin</h3>
-        <p>Beaucoup de projets « agent » sont des workflows qui s'ignorent, et s'en portent
-           mieux : prévisibles, testables, dix fois moins chers. On monte d'un niveau quand la
-           mesure le justifie, pas par principe.</p>
-      </div>
-
-      <div class="principe" data-reveal>
-        <span class="principe-num">iv</span>
-        <h3>Un système qui se trompe en silence est pire qu'un système qui échoue</h3>
-        <p>Une réponse tronquée renvoyée avec un code de succès, un cache qui n'a jamais
-           fonctionné, une recherche qui renvoie du bruit sans lever d'erreur : ce sont les
-           pannes qui coûtent le plus cher, parce que personne ne les voit. Je préfère un
-           système qui dit « je ne sais pas ».</p>
-      </div>
-
-    </div>
-
-    <div class="citation" data-reveal>
-      <blockquote>Ce qui m'intéresse est moins le modèle que la frontière entre le modèle et le
-        système d'information.</blockquote>
-    </div>
-  </section>
-
-  <!-- ----------------------------------------------- 05 CONTACT -->
-  <section class="panneau" id="p-contact" data-cle="contact" hidden>
-    <div class="panneau-tete">
-      <span class="panneau-num">05</span>
-      <h2>Me contacter</h2>
-      <p class="chapeau">Disponible pour des missions d'ingénierie GenAI, d'intégration d'APIs
-        et de traitement automatique des langues.</p>
-    </div>
-
-    <div class="contacts">
-      <a class="carte-contact" href="mailto:megret.leo@protonmail.com" data-reveal>
-        <span class="carte-label">E-mail</span>
-        <span class="carte-valeur">megret.leo@protonmail.com</span>
-      </a>
-      <a class="carte-contact" href="tel:+33783038302" data-reveal>
-        <span class="carte-label">Téléphone</span>
-        <span class="carte-valeur">07 83 03 83 02</span>
-      </a>
-      <a class="carte-contact" href="https://github.com/Leo-Meg" target="_blank" rel="noopener" data-reveal>
-        <span class="carte-label">GitHub</span>
-        <span class="carte-valeur">github.com/Leo-Meg</span>
-      </a>
-      <a class="carte-contact" href="https://www.linkedin.com/in/léo-mégret" target="_blank" rel="noopener" data-reveal>
-        <span class="carte-label">LinkedIn</span>
-        <span class="carte-valeur">linkedin.com/in/léo-mégret</span>
-      </a>
-      <a class="carte-contact accent" href="CV_Leo_Megret.pdf" data-reveal>
-        <span class="carte-label">Curriculum vitæ</span>
-        <span class="carte-valeur">Télécharger le PDF</span>
-      </a>
-      <div class="carte-contact statique" data-reveal>
-        <span class="carte-label">Localisation</span>
-        <span class="carte-valeur">Paris et Île-de-France</span>
-      </div>
-    </div>
-
-    <p class="mentions" data-reveal>
-      Photographies de lieux : Wikimedia Commons — Grands Moulins © Mbzt (CC BY 3.0) ·
-      La Sorbonne (CC BY 4.0) · Campus Jussieu © David Monniaux (CC BY-SA 3.0) ·
-      Hôpital Lariboisière (Licence Ouverte). Les autres visuels sont des captures de mes
-      propres travaux.
+  <!-- ====================================================== -->
+  <section class="section" id="contact">
+    <div class="titre"><span class="para">§ 04</span>
+      <h2><span lang="fr">Contact</span><span lang="en">Contact</span></h2></div>
+    <p lang="fr">Je vis à Ansan, en Corée du Sud, et je cherche un poste d'ingénieur IA. Disponible
+       immédiatement.</p>
+    <p lang="en">I live in Ansan, South Korea, and I am looking for an AI engineering role.
+       Available immediately.</p>
+    <p class="contacts">
+      <a class="lien" href="mailto:megret.leo@protonmail.com">megret.leo@protonmail.com</a>
+      <a class="lien" href="https://github.com/Leo-Meg" rel="noopener">github.com/Leo-Meg</a>
+      <a class="lien" href="https://www.linkedin.com/in/l%C3%A9o-m%C3%A9gret" rel="noopener">LinkedIn</a>
+      <a class="lien" href="CV_Leo_Megret.pdf">CV</a>
     </p>
   </section>
+
+  <footer class="pied">
+    <p lang="fr">Site écrit à la main, sans cadriciel ni dépendance. Photographies des lieux issues
+       de Wikimedia Commons, auteurs et licences dans <a class="lien" href="img/CREDITS.json">img/CREDITS.json</a>.</p>
+    <p lang="en">Written by hand, with no framework and no dependencies. Photographs of places from
+       Wikimedia Commons, authors and licences in <a class="lien" href="img/CREDITS.json">img/CREDITS.json</a>.</p>
+  </footer>
 
 </div>
 
