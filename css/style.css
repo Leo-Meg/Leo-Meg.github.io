@@ -78,6 +78,16 @@ html[data-lang="en"] [lang="fr"] { display: none; }
 }
 .bascule:hover { border-color: var(--accent); color: var(--accent); }
 .bascule b { color: var(--encre); font-weight: 600; }
+.bascule, .bandeau .sig { white-space: nowrap; }
+
+/* sur petit écran, on garde la signature, le CV et la bascule */
+@media (max-width: 46rem) {
+  .bandeau { gap: .7rem; padding-left: 1rem; padding-right: 1rem; }
+  .bandeau .sig { font-size: .68rem; letter-spacing: .1em; }
+  .bandeau nav { gap: .8rem; }
+  .bandeau nav a { display: none; }
+  .bandeau nav a[href$=".pdf"] { display: inline; }
+}
 
 /* ============================================================
    GRILLE GÉNÉRALE
@@ -92,7 +102,7 @@ html[data-lang="en"] [lang="fr"] { display: none; }
 .entree { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 0; }
 @media (min-width: 62rem) {
   .entree { grid-template-columns: minmax(0, 1fr) 11.5rem; column-gap: 2.6rem; }
-  .entree > .note { grid-column: 2; grid-row: 1; margin: 0; }
+  .entree > .note { grid-column: 2; grid-row: 1 / span 99; margin: 0; align-self: start; }
   .entree > :not(.note) { grid-column: 1; }
 }
 
@@ -174,6 +184,21 @@ html[data-lang="en"] [lang="fr"] { display: none; }
 @media (max-width: 68rem) {
   .note { padding: .5rem 0 0; border-left: 2px solid var(--trait); padding-left: .8rem; margin-bottom: 1rem; }
 }
+
+/* ---------- vignettes dans la marge ---------- */
+.vignette { display: block; margin: 0 0 .7rem; max-width: 11.5rem; }
+.vignette img {
+  display: block; width: 100%; height: 104px; object-fit: cover;
+  border: 1px solid var(--trait); background: var(--papier-2);
+  filter: grayscale(.4) contrast(.94);
+  transition: filter .45s ease, border-color .45s ease;
+}
+.vignette:hover img, .vignette:focus-within img { filter: none; border-color: var(--accent); }
+.vignette figcaption {
+  font-size: .62rem; letter-spacing: .04em; line-height: 1.45;
+  color: var(--texte-doux); margin-top: .32rem;
+}
+@media (max-width: 62rem) { .vignette { float: right; margin: 0 0 .6rem .9rem; max-width: 8.5rem; } }
 
 /* ---------- listes de savoir-faire ---------- */
 .grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.3rem 2rem; }

@@ -19,8 +19,22 @@ Puis ouvrir http://localhost:8777
 index.html          tout le contenu, dans les deux langues
 css/style.css       mise en page, couleurs, thème sombre
 js/app.js           bascule de langue et apparition au défilement
-img/                photographies, licences dans CREDITS.json
+img/                photographies en pleine taille, licences dans CREDITS.json
+img/vignettes/      les mêmes à 480 px de large, ce que le site charge
 CV_Leo_Megret.pdf   le CV téléchargeable
+```
+
+## Les vignettes
+
+Chaque note de marge peut porter une petite image, dans un `figure.vignette`.
+Le site charge la version réduite de `img/vignettes/`, et le clic ouvre
+l'originale. Les vignettes sont désaturées au repos et reprennent leurs couleurs
+au survol.
+
+Pour les régénérer après avoir ajouté une photo.
+
+```bash
+sips -Z 480 img/nouvelle.jpg --out img/vignettes/nouvelle.jpg
 ```
 
 ## Le bilinguisme
